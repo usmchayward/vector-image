@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0L10,5L0,10z"/></marker></defs>
+<rect x="20" y="20" width="760" height="460" fill="none" stroke="#888" stroke-dasharray="8,4"/>
+<text x="30" y="45" font-size="16" font-family="Arial">Example Cloud (made-up)</text>
+<g transform="translate(430,100)"><rect x="0" y="0" width="180" height="260" rx="8" fill="#eef6ff" stroke="#36c"/></g>
+<rect x="40" y="200" width="120" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+<text x="50" y="235" font-size="14" font-family="Arial">Users</text>
+<rect x="230" y="200" width="140" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+<text x="240" y="235" font-size="14" font-family="Arial">Load Balancer</text>
+<rect x="450" y="120" width="140" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+<text x="460" y="155" font-size="14" font-family="Arial">App Server A</text>
+<rect x="450" y="280" width="140" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+<text x="460" y="315" font-size="14" font-family="Arial">App Server B</text>
+<rect x="650" y="200" width="120" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+<text x="660" y="235" font-size="14" font-family="Arial">Database</text>
+<line x1="160" y1="230" x2="230" y2="230" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<line x1="370" y1="230" x2="450" y2="150" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<line x1="370" y1="230" x2="450" y2="310" stroke="#000" stroke-width="2" marker-end="url(#a)"/>
+<line x1="590" y1="150" x2="650" y2="230" stroke="#000" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#a)"/>
+<line x1="590" y1="310" x2="650" y2="230" stroke="#000" stroke-width="2" stroke-dasharray="2,4" marker-end="url(#a)"/>
+<ellipse cx="710" cy="400" rx="50" ry="30" fill="#ffe" stroke="#c60"/><text x="680" y="405" font-size="12">Cache</text>
+<path d="M100,380 C150,330 250,430 300,380" fill="none" stroke="#090" stroke-width="2"/>
+</svg>

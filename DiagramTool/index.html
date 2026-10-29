@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Diagram Tool</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: file:; connect-src data: blob:; img-src 'self' data: blob: file:; worker-src blob: data:">
+<link rel="stylesheet" href="app/editor.css">
+</head><body>
+<div id="bar">
+  <button id="libtoggle" title="Show a second document next to this one, e.g. an icon library to copy from">Library pane ◫</button>
+  <span class="sep"></span>
+  <button data-tool="select" class="on" title="V">Select</button><button data-tool="line" title="L">Line</button><button data-tool="rect" title="R">Box</button><button data-tool="ellipse" title="E">Oval</button><button data-tool="text" title="T">Text</button>
+  <span class="sep"></span>
+  <select id="dash" title="line style"><option>solid</option><option>dashed</option><option>dotted</option></select>
+  <input type="color" id="color" value="#000000" title="line / text colour"><input type="color" id="fill" value="#ffffff" title="fill colour"><label><input type="checkbox" id="nofill" checked>no fill</label>
+  <input id="sw" type="number" value="2" min="0.5" step="0.5" title="line width" style="width:42px">
+  <label><input type="checkbox" id="arrow"> arrow</label>
+  rotate <input id="rot" type="number" value="0" step="15" style="width:48px">°
+  <span class="sep"></span>
+  <button id="copy" title="Ctrl+D">Duplicate</button><button id="del" title="Delete">Delete</button><button id="group" title="Ctrl+G">Group</button><button id="ungroup" title="Ctrl+Shift+G">Ungroup</button><button id="front">Front</button><button id="back">Back</button><button id="undo" title="Ctrl+Z">Undo</button><button id="redo" title="Ctrl+Y">Redo</button>
+  <label title="snap moves to a 10 px grid and line ends to boxes"><input type="checkbox" id="snap" checked> snap</label>
+  <small class="hint">Ctrl+C / Ctrl+V copy between panes, or drag items across</small>
+</div>
+<div id="panes">
+<div class="pane" id="paneA">
+  <div class="phead"><b class="ptitle">Main diagram</b>
+    <label class="btn primary">Open file…<input type="file" class="k-open" accept=".pdf,.svg,.vsdx,.png,.jpg,.jpeg,.drawio,.xml,.json" hidden></label>
+    <span class="k-pagebox" hidden>page <input class="k-page" type="number" min="1" value="1" style="width:40px"></span>
+    <label title="For PNG/JPG: find boxes, lines and text (slower). Off = just place the picture."><input type="checkbox" class="k-recog" checked> recognise pictures</label>
+    <button class="k-zin">+</button><button class="k-zout">−</button><button class="k-zfit">Fit</button>
+    <label><input type="checkbox" class="k-showbg" checked> background</label>
+    <span class="sep"></span>Save: <button class="k-savepdf">PDF</button><button class="k-savesvg">SVG</button><button class="k-savepng">PNG</button><button class="k-savejson">Project</button><button class="k-savedrawio">draw.io</button>
+  </div>
+  <div class="k-status status"></div>
+  <div class="k-wrap wrap"><svg class="k-c canvas" xmlns="http://www.w3.org/2000/svg"></svg><div class="k-drop drop">Drop a PDF, SVG, Visio (.vsdx), draw.io, PNG or JPG here<br><small>Everything stays on this computer. Nothing is uploaded.</small></div></div>
+</div>
+<div id="divider" title="drag to resize"></div>
+<div class="pane" id="paneB">
+  <div class="phead"><b class="ptitle">Library</b>
+    <label class="btn primary">Open file…<input type="file" class="k-open" accept=".pdf,.svg,.vsdx,.png,.jpg,.jpeg,.drawio,.xml,.json" hidden></label>
+    <span class="k-pagebox" hidden>page <input class="k-page" type="number" min="1" value="1" style="width:40px"></span>
+    <label title="For PNG/JPG: find boxes, lines and text (slower). Off = just place the picture."><input type="checkbox" class="k-recog" checked> recognise pictures</label>
+    <button class="k-zin">+</button><button class="k-zout">−</button><button class="k-zfit">Fit</button>
+    <label><input type="checkbox" class="k-showbg" checked> background</label>
+    <span class="sep"></span>Save: <button class="k-savepdf">PDF</button><button class="k-savesvg">SVG</button><button class="k-savepng">PNG</button><button class="k-savejson">Project</button><button class="k-savedrawio">draw.io</button>
+  </div>
+  <div class="k-status status"></div>
+  <div class="k-wrap wrap"><svg class="k-c canvas" xmlns="http://www.w3.org/2000/svg"></svg><div class="k-drop drop">Drop a PDF, SVG, Visio (.vsdx), draw.io, PNG or JPG here<br><small>Everything stays on this computer. Nothing is uploaded.</small></div></div>
+</div>
+</div>
+<div id="modal" hidden><div><textarea id="ta" rows="6" cols="40"></textarea><br><button id="taok">OK</button> <button id="tacancel">Cancel</button></div></div>
+<script src="vendor/jszip.min.js"></script>
+<script src="vendor/pdf.worker.min.js"></script>
+<script src="vendor/pdf.min.js"></script>
+<script src="app/core.js"></script>
+<script src="app/drawio.js"></script>
+<script src="app/import_svg.js"></script>
+<script src="app/import_vsdx.js"></script>
+<script src="app/import_pdf.js"></script>
+<script src="app/import_raster.js"></script>
+<script src="app/pdf_export.js"></script>
+<script src="app/editor.js"></script>
+</body></html>

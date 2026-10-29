@@ -1,0 +1,17 @@
+body{margin:0;font:13px Arial,sans-serif;display:flex;flex-direction:column;height:100vh}
+#bar{padding:5px;background:#eef;border-bottom:1px solid #bbc;display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+#bar button.on{background:#9cf}.sep{width:1px;height:20px;background:#99a;margin:0 4px}
+.btn{border:1px solid #888;padding:2px 8px;border-radius:3px;background:#fff;cursor:pointer}.primary{background:#2a6;color:#fff;border-color:#185}
+#status,.status{padding:3px 8px;background:#ffd;min-height:16px;font-size:12px}
+#wrap,.wrap{flex:1;overflow:auto;background:#888;position:relative}
+svg.canvas{background:#fff;display:block;margin:10px}
+#drop,.drop{position:absolute;inset:40px;border:3px dashed #fff;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+#modal{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center}#modal>div{background:#fff;padding:12px;border-radius:6px}
+@media print{#bar,#status,#drop,#modal{display:none!important}#wrap,.wrap{overflow:visible;background:#fff}svg.canvas{margin:0}body{display:block;height:auto}}
+#modal[hidden]{display:none}
+.txthit{fill:transparent;stroke:none;cursor:move}.txthit:hover{fill:#0099ff14;stroke:#09f;stroke-width:1px;stroke-dasharray:3 2;vector-effect:non-scaling-stroke}
+#panes{display:flex;flex:1;min-height:0}.pane{display:flex;flex-direction:column;flex:1 1 0;min-width:180px;border-top:3px solid transparent}
+.pane[hidden],#divider[hidden]{display:none}.pane.active{border-top-color:#2a6}.phead{display:flex;gap:4px;flex-wrap:wrap;align-items:center;padding:4px;background:#e4e4ea}
+.pane.active .phead{background:#d6ecdf}.ptitle{margin-right:6px}#divider{flex:0 0 7px;cursor:col-resize;background:#556}#divider:hover{background:#2a6}
+.pane.dragsrc ~ .pane .wrap,.pane ~ .pane.dragsrc{}.pane.dragsrc{cursor:copy}#libtoggle.on{background:#9cf}.hint{color:#555}
+@media print{#panes{display:block}.phead,.status,#divider,.pane:not(.active){display:none!important}.wrap{overflow:visible;background:#fff}svg.canvas{margin:0}}
